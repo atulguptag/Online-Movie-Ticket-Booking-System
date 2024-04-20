@@ -199,7 +199,7 @@ class LoginView(generics.CreateAPIView):
 
 class LogoutView(APIView):
     permission_classes = (permissions.AllowAny,)
-
+    authentication_classes = ()
     def post(self, request):
         logout(request)
         return Response({"success": "Successfully logged out."}, status=status.HTTP_200_OK)
